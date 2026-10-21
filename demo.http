@@ -1,0 +1,35 @@
+### 1. Xem danh sách
+GET http://localhost:3000/books
+
+### 2. Thêm sách (lần đầu sẽ có id = 2)
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": "Lập trình Web"
+}
+
+### 3. Xem sách vừa thêm
+GET http://localhost:3000/books/2
+
+### 4. Sửa sách
+PUT http://localhost:3000/books/2
+Content-Type: application/json
+
+{
+  "title": "Lập trình Web với Hono"
+}
+
+### 5. Xoá sách
+DELETE http://localhost:3000/books/2
+
+### 6. Xem lại sách đã xoá: 404
+GET http://localhost:3000/books/2
+
+### 7. Thử dữ liệu không hợp lệ: 400
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": ""
+}
